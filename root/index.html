@@ -6,80 +6,55 @@
   <title>Escape Rooms at Pier 39 | San Francisco Adventures</title>
   <meta name="description" content="Experience thrilling escape rooms at Pier 39 in San Francisco. Fun, immersive challenges for tourists, groups, and special occasions!" />
 
-  <!-- Tailwind & AOS -->
+  <!-- Tailwind & AOS CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
-  <!-- Brand theme using your colors: primary #cd102d, background #ffffff, accent #6086bf -->
+  <!-- Performance hints -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="preconnect" href="https://fareharbor.com" crossorigin>
+  <link rel="preconnect" href="https://dipr2nuwo661l.cloudfront.net" crossorigin>
+  <link rel="preconnect" href="https://maps.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://maps.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://flyerthrillzone.com" crossorigin>
+
+  <!-- Preload hero image so it can be the LCP -->
+  <link rel="preload" as="image" href="https://flyerthrillzone.com/wp-content/uploads/2023/02/escape-room6-1920x1080-1-800x450.jpg" imagesizes="100vw" />
+
+  <!-- Brand theme using your colors: primary #cd102d, accent #6086bf, backgrounds alternating -->
   <style>
-    /* Fix contrast: ensure white cards use dark text even inside colored bands */
-.section-card {
-  background-color: #ffffff;
-  color: var(--brand-text) !important;
-  border: 1px solid var(--brand-border);
-  border-radius: 0.75rem;
-}
-
-/* Headings & body copy in cards */
-.section-card h1,
-.section-card h2,
-.section-card h3,
-.section-card h4,
-.section-card h5,
-.section-card h6,
-.section-card p,
-.section-card li,
-.section-card span {
-  color: var(--brand-text) !important;
-}
-
-/* Muted text inside cards */
-.section-card .text-muted {
-  color: var(--brand-muted) !important;
-}
-
-/* Links inside cards = brand accent (blue) */
-.section-card a,
-.section-card .link-accent {
-  color: var(--brand-accent) !important;
-  text-decoration: none;
-}
-.section-card a:hover,
-.section-card .link-accent:hover {
-  text-decoration: underline;
-}
-
     :root{
       --brand-primary: #cd102d;       /* Primary (buttons) */
       --brand-accent:  #6086bf;       /* Links / hover */
-      --brand-bg:      #ffffff;       /* Base page background */
-      --brand-text:    #0f172a;       /* Dark text for readability */
+      --brand-text:    #0f172a;       /* Dark text */
       --brand-muted:   #5b6b80;       /* Secondary text */
       --brand-border:  rgba(0,0,0,0.08);
-      /* Tints derived from your brand colors */
-      --tint-blue: rgba(96, 134, 191, 0.70); /* much darker blue band */ /* darker blue band */ /* #6086bf @ 12% */
-      --tint-red:  rgba(205, 16, 45, 0.55); /* much darker red band */ /* darker red band */  /* #cd102d @ 8% */
     }
 
-    /* Global surfaces & text */
-    body{ background-color: var(--brand-bg); color: var(--brand-text); }
+    /* Alternating section helpers (SOLID bands, no tint) */
+    .section-white { background-color: #ffffff; }
+    .section-blue  { background-color: #6086bf; color:#fff; }
+    .section-red   { background-color: #cd102d; color:#fff; }
 
-    /* Alternating section helpers */
-.section-white { background-color: #ffffff; }
-.section-blue  { background-color: #6086bf; color:#fff; }
-.section-red   { background-color: #cd102d; color:#fff; }
+    /* Headings & links contrast inside colored bands */
+    .section-blue h1, .section-blue h2, .section-blue h3, .section-blue h4,
+    .section-red  h1, .section-red  h2, .section-red  h3, .section-red  h4 { color:#ffffff !important; }
+    .section-blue .text-muted, .section-red .text-muted { color: rgba(255,255,255,0.92); }
+    .section-blue .link-accent, .section-red .link-accent { color:#ffffff; text-decoration: underline; }
 
-/* Ensure text/link contrast on colored bands */
-.section-blue .text-muted,
-.section-red .text-muted { color: rgba(255,255,255,0.92); }
-
-.section-blue .link-accent,
-.section-red .link-accent { color:#ffffff; text-decoration: underline; }
-
-.section-blue h2, .section-blue h3,
-.section-red h2, .section-red h3 { color:#ffffff !important; }
-
-.section-card  { background-color: #ffffff; border:1px solid var(--brand-border); border-radius: 0.75rem; }
+    /* Cards: always white with dark text for readability (even inside color bands) */
+    .section-card {
+      background-color: #ffffff;
+      color: var(--brand-text) !important;
+      border:1px solid var(--brand-border);
+      border-radius: 0.75rem;
+    }
+    .section-card h1, .section-card h2, .section-card h3, .section-card h4, .section-card h5, .section-card h6,
+    .section-card p, .section-card li, .section-card span { color: var(--brand-text) !important; }
+    .section-card .text-muted { color: var(--brand-muted) !important; }
+    .section-card a, .section-card .link-accent { color: var(--brand-accent) !important; text-decoration: none; }
+    .section-card a:hover, .section-card .link-accent:hover { text-decoration: underline; }
 
     /* Buttons / links */
     .btn-primary{ background-color: var(--brand-primary); color:#fff; }
@@ -88,20 +63,9 @@
     .link-accent:hover{ text-decoration: underline; }
     .text-muted{ color: var(--brand-muted); }
 
-    /* Keep Tailwind color utilities in markup mapped to brand intent */
-    .bg-blue-500{ background-color: var(--brand-primary) !important; }
-    .hover\:bg-blue-600:hover{ background-color: var(--brand-accent) !important; }
-    .text-blue-400{ color: var(--brand-accent) !important; }
-    .text-green-400{ color: var(--brand-accent) !important; }
-
-    /* Hero overlay (keep photo visible but readable) */
-    .hero-overlay{ background: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)); }
+    /* Hero overlay for readability on photo */
+    .hero-overlay{ background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)); }
   </style>
-
-
-
-  <!-- FareHarbor Embed -->
-  <script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes" defer></script>
 
   <!-- SEO: Canonical + Robots -->
   <link rel="canonical" href="https://flyerthrillzone.com/escape-room" />
@@ -129,17 +93,14 @@
       "https://flyerthrillzone.com/wp-content/uploads/2023/02/escape-room5-1920x1080-1-800x450.jpg"
     ],
     "telephone": "+1-415-555-1234",
-    "address": {"@type": "PostalAddress","streetAddress": "Beach Street & The Embarcadero","addressLocality": "San Francisco","addressRegion": "CA","postalCode": "94133","addressCountry": "US"},
-    "geo": {"@type": "GeoCoordinates", "latitude": 37.8087, "longitude": -122.4098},
+    "address": {"@type":"PostalAddress","streetAddress":"Beach Street & The Embarcadero","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94133","addressCountry":"US"},
+    "geo": {"@type":"GeoCoordinates","latitude":37.8087,"longitude":-122.4098},
     "sameAs": ["https://www.instagram.com/flyerthrillzone/","https://www.facebook.com/flyerthrillzone/"],
-    "priceRange": "$$",
-    "acceptsReservations": true,
-    "currenciesAccepted": "USD",
-    "paymentAccepted": "Cash, Credit Card",
+    "priceRange":"$$","acceptsReservations":true,"currenciesAccepted":"USD","paymentAccepted":"Cash, Credit Card",
     "hasMap": "https://www.google.com/maps?q=Pier+39+San+Francisco&hl=en&z=15",
-    "hasOfferCatalog": {"@type": "OfferCatalog","name": "Escape Room Experiences","itemListElement": [
-      {"@type": "Product","name": "Escape the Rock","description": "Break out of Alcatraz in this high-stakes escape experience! Medium difficulty • 30 minutes.","image": "https://flyerthrillzone.com/wp-content/uploads/2023/02/escape-room6-1920x1080-1-800x450.jpg","brand": {"@type": "Brand","name": "The Flyer Thrill Zone"},"additionalProperty": [{"@type": "PropertyValue","name": "Duration","value": "30 minutes"},{"@type": "PropertyValue","name": "Difficulty","value": "Medium"}],"offers": {"@type": "Offer","url": "https://flyerthrillzone.com/escape-room#rooms","availability": "https://schema.org/InStock"}},
-      {"@type": "Product","name": "Mobster Hideout","description": "Search the hideout and escape before the mob boss returns! Hard difficulty • 30 minutes.","image": "https://flyerthrillzone.com/wp-content/uploads/2023/02/escape-room5-1920x1080-1-800x450.jpg","brand": {"@type": "Brand","name": "The Flyer Thrill Zone"},"additionalProperty": [{"@type": "PropertyValue","name": "Duration","value": "30 minutes"},{"@type": "PropertyValue","name": "Difficulty","value": "Hard"}],"offers": {"@type": "Offer","url": "https://flyerthrillzone.com/escape-room#rooms","availability": "https://schema.org/InStock"}}
+    "hasOfferCatalog": {"@type":"OfferCatalog","name":"Escape Room Experiences","itemListElement":[
+      {"@type":"Product","name":"Escape the Rock","description":"Break out of Alcatraz in this high-stakes escape experience! Medium difficulty • 30 minutes.","image":"https://flyerthrillzone.com/wp-content/uploads/2023/02/escape-room6-1920x1080-1-800x450.jpg","brand":{"@type":"Brand","name":"The Flyer Thrill Zone"},"additionalProperty":[{"@type":"PropertyValue","name":"Duration","value":"30 minutes"},{"@type":"PropertyValue","name":"Difficulty","value":"Medium"}],"offers":{"@type":"Offer","url":"https://flyerthrillzone.com/escape-room#rooms","availability":"https://schema.org/InStock"}},
+      {"@type":"Product","name":"Mobster Hideout","description":"Search the hideout and escape before the mob boss returns! Hard difficulty • 30 minutes.","image":"https://flyerthrillzone.com/wp-content/uploads/2023/02/escape-room5-1920x1080-1-800x450.jpg","brand":{"@type":"Brand","name":"The Flyer Thrill Zone"},"additionalProperty":[{"@type":"PropertyValue","name":"Duration","value":"30 minutes"},{"@type":"PropertyValue","name":"Difficulty","value":"Hard"}],"offers":{"@type":"Offer","url":"https://flyerthrillzone.com/escape-room#rooms","availability":"https://schema.org/InStock"}}
     ]}
   }
   </script>
@@ -155,8 +116,15 @@
 
 <body class="font-sans">
 
-  <!-- HERO SECTION (overlay stays dark for readability on photo) -->
-  <header class="relative h-screen bg-cover bg-center" style="background-image: url('https://flyerthrillzone.com/wp-content/uploads/2023/02/escape-room6-1920x1080-1-800x450.jpg');">
+  <!-- HERO SECTION (use <img> for a real LCP candidate) -->
+  <header class="relative h-screen bg-center overflow-hidden">
+    <img
+      src="https://flyerthrillzone.com/wp-content/uploads/2023/02/escape-room6-1920x1080-1-800x450.jpg"
+      alt=""
+      fetchpriority="high"
+      width="800" height="450"
+      class="absolute inset-0 w-full h-full object-cover"
+      aria-hidden="true">
     <div class="absolute inset-0 hero-overlay flex items-center justify-center">
       <div class="text-center px-4" data-aos="fade-up">
         <h1 class="text-5xl font-bold mb-4 text-white">Escape Rooms at Pier 39</h1>
@@ -174,36 +142,44 @@
     </div>
   </section>
 
-  <!-- ROOMS SECTION (Blue tint) -->
+  <!-- ROOMS SECTION (Blue band) -->
   <section id="rooms" class="py-16 section-blue" data-aos="fade-up">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-4xl font-bold text-center mb-12" style="color: var(--brand-primary)">Choose Your Room</h2>
+      <h2 class="text-4xl font-bold text-center mb-12">Choose Your Room</h2>
       <div class="flex flex-col md:flex-row justify-center gap-8">
 
         <!-- Room 1 card -->
         <div class="section-card overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay="100">
-          <img src="https://flyerthrillzone.com/wp-content/uploads/2023/02/escape-room6-1920x1080-1-800x450.jpg" alt="Escape the Rock Room" class="w-full aspect-video object-cover">
+          <img
+            src="https://flyerthrillzone.com/wp-content/uploads/2023/02/escape-room6-1920x1080-1-800x450.jpg"
+            alt="Escape the Rock Room"
+            class="w-full aspect-video object-cover"
+            width="800" height="450" loading="lazy" decoding="async">
           <div class="p-6">
             <h3 class="text-2xl font-bold mb-2">Escape the Rock</h3>
             <p class="text-muted mb-2">Medium Difficulty • 30 Minutes</p>
             <p class="mb-4">Break out of Alcatraz in this high-stakes escape experience!</p>
             <div class="flex gap-4">
               <a href="/alcatraz-escape-room" class="link-accent font-semibold">Learn More</a>
-              <a href="#" onclick="FH.open({ shortname: 'theflyerthrillzone', item: 485631 }); return false;" class="link-accent font-semibold">Book Now</a>
+              <a href="#" class="link-accent font-semibold js-fh" data-fh-shortname="theflyerthrillzone" data-fh-item="485631">Book Now</a>
             </div>
           </div>
         </div>
 
         <!-- Room 2 card -->
         <div class="section-card overflow-hidden shadow-sm" data-aos="fade-up" data-aos-delay="200">
-          <img src="https://flyerthrillzone.com/wp-content/uploads/2023/02/escape-room5-1920x1080-1-800x450.jpg" alt="Mobster Hideout Room" class="w-full aspect-video object-cover">
+          <img
+            src="https://flyerthrillzone.com/wp-content/uploads/2023/02/escape-room5-1920x1080-1-800x450.jpg"
+            alt="Mobster Hideout Room"
+            class="w-full aspect-video object-cover"
+            width="800" height="450" loading="lazy" decoding="async">
           <div class="p-6">
             <h3 class="text-2xl font-bold mb-2">Mobster Hideout</h3>
             <p class="text-muted mb-2">Hard Difficulty • 30 Minutes</p>
             <p class="mb-4">Search the hideout and escape before the mob boss returns!</p>
             <div class="flex gap-4">
               <a href="/mobster-hideout" class="link-accent font-semibold">Learn More</a>
-              <a href="#" onclick="FH.open({ shortname: 'theflyerthrillzone', item: 485631 }); return false;" class="link-accent font-semibold">Book Now</a>
+              <a href="#" class="link-accent font-semibold js-fh" data-fh-shortname="theflyerthrillzone" data-fh-item="485631">Book Now</a>
             </div>
           </div>
         </div>
@@ -233,12 +209,25 @@
     </div>
   </section>
 
-  <!-- MAP & LOCATION (Red tint) -->
+  <!-- MAP & LOCATION (Red band) with facade -->
   <section class="py-16 section-red" data-aos="fade-up">
     <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-4" style="color: var(--brand-primary)">Visit Us at Pier 39</h2>
+      <h2 class="text-3xl font-bold mb-4">Visit Us at Pier 39</h2>
       <p class="text-muted mb-6">Beach Street & The Embarcadero, San Francisco, CA 94133</p>
-      <iframe class="w-full h-64 rounded border" style="border-color: var(--brand-border);" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.297014587375!2d-122.41001868468122!3d37.80867397975165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580f9f8c1f0a7%3A0xe1b89956f3a72782!2sPier%2039!5e0!3m2!1sen!2sus!4v1627770157290!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+
+      <!-- Interactive map facade -->
+      <div id="map-facade" class="max-w-4xl mx-auto">
+        <button id="map-load" class="btn-primary py-3 px-6 rounded-md font-bold">View Interactive Map</button>
+        <p class="mt-2">Loads Google Maps only when you need it.</p>
+      </div>
+      <div id="map-slot" class="max-w-4xl mx-auto mt-4 hidden"></div>
+
+      <noscript>
+        <!-- Fallback for no-JS users -->
+        <iframe class="w-full h-64 rounded border"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.297014587375!2d-122.41001868468122!3d37.80867397975165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580f9f8c1f0a7%3A0xe1b89956f3a72782!2sPier%2039!5e0!3m2!1sen!2sus!4v1627770157290!5m2!1sen!2sus"
+          loading="lazy" allowfullscreen></iframe>
+      </noscript>
     </div>
   </section>
 
@@ -253,14 +242,60 @@
     </p>
   </section>
 
-  <!-- FOOTER (solid brand blue for contrast) -->
+  <!-- FOOTER (solid blue for contrast) -->
   <footer class="py-6 text-center" style="background-color: #6086bf;">
     <p class="text-white">&copy; 2025 Escape Rooms at Pier 39 | <a href="/privacy-policy" class="underline">Privacy Policy</a> | <a href="/terms-of-use" class="underline">Terms of Use</a></p>
   </footer>
 
-  <!-- AOS SCRIPT -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init({ once: true, duration: 1000 });</script>
+  <!-- AOS SCRIPT (deferred) -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+
+  <!-- Lazy-load FareHarbor on demand -->
+  <script>
+    (function () {
+      function loadFH(cb) {
+        if (window.FH) return cb();
+        var s = document.createElement('script');
+        s.src = 'https://fareharbor.com/embeds/api/v1/?autolightframe=yes';
+        s.async = true;
+        s.onload = cb;
+        document.head.appendChild(s);
+      }
+      function onClick(e) {
+        e.preventDefault();
+        var a = e.currentTarget;
+        var shortname = a.getAttribute('data-fh-shortname');
+        var item = parseInt(a.getAttribute('data-fh-item'), 10);
+        loadFH(function () {
+          if (window.FH && window.FH.open) {
+            window.FH.open({ shortname: shortname, item: item });
+          }
+        });
+      }
+      document.addEventListener('DOMContentLoaded', function () {
+        // Init AOS after defer load
+        if (window.AOS) { AOS.init({ once: true, duration: 1000 }); }
+        // Bind FH lazy loader
+        document.querySelectorAll('.js-fh').forEach(function (el) {
+          el.addEventListener('click', onClick);
+        });
+      });
+    })();
+  </script>
+
+  <!-- Lazy-load Google Maps iframe on demand -->
+  <script>
+    document.getElementById('map-load')?.addEventListener('click', function () {
+      var slot = document.getElementById('map-slot');
+      if (!slot) return;
+      slot.innerHTML =
+        '<iframe class="w-full h-64 rounded border" style="border-color: rgba(0,0,0,0.08);" ' +
+        'src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.297014587375!2d-122.41001868468122!3d37.80867397975165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580f9f8c1f0a7%3A0xe1b89956f3a72782!2sPier%2039!5e0!3m2!1sen!2sus!4v1627770157290!5m2!1sen!2sus" ' +
+        'loading="lazy" allowfullscreen></iframe>';
+      slot.classList.remove('hidden');
+      document.getElementById('map-facade').classList.add('hidden');
+    });
+  </script>
 
 </body>
 </html>
