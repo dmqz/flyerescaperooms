@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Escape Rooms at Pier 39 | San Francisco Adventures</title>
   <meta name="description" content="Discover thrilling escape rooms at Pier 39 in San Francisco! Book now for immersive puzzle-solving adventures perfect for groups, birthdays, and team events." />
+
+  <!-- Canonical + Robots -->
   <link rel="canonical" href="https://flyerthrillzone.com/escape-room" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
 
@@ -14,9 +16,10 @@
   <meta property="og:description" content="Discover thrilling escape rooms at Pier 39 in San Francisco! Book now for immersive puzzle-solving adventures perfect for groups, birthdays, and team events." />
   <meta property="og:url" content="https://flyerthrillzone.com/escape-room" />
   <meta property="og:image" content="https://flyerthrillzone.com/wp-content/uploads/2023/02/escape-room6-1920x1080-1-800x450.jpg" />
+  <meta property="og:site_name" content="The Flyer Thrill Zone" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Schema.org JSON-LD -->
+  <!-- Schema.org JSON-LD: Business + Room offers -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -29,6 +32,10 @@
     "@id": "https://flyerthrillzone.com/escape-room",
     "url": "https://flyerthrillzone.com/escape-room",
     "telephone": "+1-415-555-1234",
+    "priceRange": "$$",
+    "acceptsReservations": true,
+    "currenciesAccepted": "USD",
+    "paymentAccepted": "Cash, Credit Card",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Beach Street & The Embarcadero",
@@ -42,6 +49,7 @@
       "latitude": 37.8087,
       "longitude": -122.4098
     },
+    "hasMap": "https://www.google.com/maps?q=Pier+39+San+Francisco&hl=en&z=15",
     "sameAs": [
       "https://www.instagram.com/flyerthrillzone/",
       "https://www.facebook.com/flyerthrillzone/"
@@ -64,10 +72,7 @@
               "name": "Escape Alcatraz",
               "description": "Break out of the infamous prison in this thrilling 60-minute adventure.",
               "image": "https://flyerthrillzone.com/wp-content/uploads/2023/02/escape-room6-1920x1080-1-800x450.jpg",
-              "brand": {
-                "@type": "Brand",
-                "name": "The Flyer Thrill Zone"
-              },
+              "brand": {"@type": "Brand","name": "The Flyer Thrill Zone"},
               "additionalProperty": [
                 {"@type":"PropertyValue","name":"Duration","value":"60 minutes"},
                 {"@type":"PropertyValue","name":"Difficulty","value":"Medium"}
@@ -75,11 +80,7 @@
               "offers": {
                 "@type": "Offer",
                 "url": "https://book.peek.com/escape-room",
-                "availability": "https://schema.org/InStock",
-                "eligibleRegion": {
-                  "@type": "Place",
-                  "address": {"@type":"PostalAddress","addressRegion":"CA","addressLocality":"San Francisco"}
-                }
+                "availability": "https://schema.org/InStock"
               }
             }
           ]
@@ -93,10 +94,7 @@
               "name": "Mobster Hideout",
               "description": "Step into the underworld and find the clues before the boss returns!",
               "image": "https://flyerthrillzone.com/wp-content/uploads/2023/02/escape-room5-1920x1080-1-800x450.jpg",
-              "brand": {
-                "@type": "Brand",
-                "name": "The Flyer Thrill Zone"
-              },
+              "brand": {"@type": "Brand","name": "The Flyer Thrill Zone"},
               "additionalProperty": [
                 {"@type":"PropertyValue","name":"Duration","value":"60 minutes"},
                 {"@type":"PropertyValue","name":"Difficulty","value":"Hard"}
@@ -104,11 +102,7 @@
               "offers": {
                 "@type": "Offer",
                 "url": "https://book.peek.com/escape-room",
-                "availability": "https://schema.org/InStock",
-                "eligibleRegion": {
-                  "@type": "Place",
-                  "address": {"@type":"PostalAddress","addressRegion":"CA","addressLocality":"San Francisco"}
-                }
+                "availability": "https://schema.org/InStock"
               }
             }
           ]
@@ -118,7 +112,7 @@
   }
   </script>
 
-  <!-- Breadcrumbs (optional but nice for rich results) -->
+  <!-- Breadcrumbs (JSON-LD) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
