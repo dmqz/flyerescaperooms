@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Escape Rooms at Pier 39 | San Francisco Adventures</title>
+  <meta name="description" content="Experience thrilling escape rooms at Pier 39 in San Francisco. Fun, immersive challenges for tourists, groups, and special occasions!" />
+
+  <!-- Tailwind & AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Brand theme (FTZ navy + sky) -->
+  <style>
+    :root{
+      --ftz-navy: #0B2C57;      /* brand navy */
+      --ftz-sky:  #28AEE1;      /* accent sky blue */
+      --ftz-sky-600: #1E90C2;   /* hover shade */
+      --ftz-bg-900: #0B1323;    /* deep page bg */
+      --ftz-bg-800: #111C2E;    /* section bg */
+    }
+    body { background-color: var(--ftz-bg-900); }
+    .section-dark { background-color: var(--ftz-bg-900); }
+    .section-mid { background-color: var(--ftz-bg-800); }
+
+    .btn-brand { background-color: var(--ftz-sky); color:#fff; }
+    .btn-brand:hover { background-color: var(--ftz-sky-600); }
+
+    .link-brand { color: var(--ftz-sky); }
+    .link-brand:hover { text-decoration: underline; }
+
+    /* Optional: subtle card border for contrast on dark bg */
+    .card { border: 1px solid rgba(255,255,255,0.06); }
+  </style>
+
+  <!-- FareHarbor Embed -->
+  <script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes" defer></script>
+
+  <!-- SEO: Canonical + Robots -->
+  <link rel="canonical" href="https://flyerthrillzone.com/escape-room" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- SEO: Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Escape Rooms at Pier 39 | San Francisco Adventures" />
+  <meta property="og:description" content="Experience thrilling escape rooms at Pier 39 in San Francisco. Fun, immersive challenges for tourists, groups, and special occasions!" />
+  <meta property="og:url" content="https://flyerthrillzone.com/escape-room" />
+  <meta property="og:image" content="https://flyerthrillzone.com/wp-content/uploads/2023/02/escape-room6-1920x1080-1-800x450.jpg" />
+  <meta property="og:site_name" content="The Flyer Thrill Zone" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- SEO: Business + Offers (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EntertainmentBusiness",
+    "@id": "https://flyerthrillzone.com/escape-room",
+    "name": "Escape Rooms at Pier 39",
+    "url": "https://flyerthrillzone.com/escape-room",
+    "image": [
+      "https://flyerthrillzone.com/wp-content/uploads/2023/02/escape-room6-1920x1080-1-800x450.jpg",
+      "https://flyerthrillzone.com/wp-content/uploads/2023/02/escape-room5-1920x1080-1-800x450.jpg"
+    ],
+    "telephone": "+1-415-555-1234",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Beach Street & The Embarcadero",
+      "addressLocality": "San Francisco",
+      "addressRegion": "CA",
+      "postalCode": "94133",
+      "addressCountry": "US"
+    },
+    "geo": {"@type": "GeoCoordinates", "latitude": 37.8087, "longitude": -122.4098},
+    "sameAs": [
+      "https://www.instagram.com/flyerthrillzone/",
+      "https://www.facebook.com/flyerthrillzone/"
+    ],
+    "priceRange": "$$",
+    "acceptsReservations": true,
+    "currenciesAccepted": "USD",
+    "paymentAccepted": "Cash, Credit Card",
+    "hasMap": "https://www.google.com/maps?q=Pier+39+San+Francisco&hl=en&z=15",
+    "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "Great for groups and team-building", "value": true}],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Escape Room Experiences",
+      "itemListElement": [
+        {
+          "@type": "Product",
+          "name": "Escape the Rock",
+          "description": "Break out of Alcatraz in this high-stakes escape experience! Medium difficulty • 30 minutes.",
+          "image": "https://flyerthrillzone.com/wp-content/uploads/2023/02/escape-room6-1920x1080-1-800x450.jpg",
+          "brand": {"@type": "Brand", "name": "The Flyer Thrill Zone"},
+          "additionalProperty": [
+            {"@type": "PropertyValue", "name": "Duration", "value": "30 minutes"},
+            {"@type": "PropertyValue", "name": "Difficulty", "value": "Medium"}
+          ],
+          "offers": {"@type": "Offer", "url": "https://flyerthrillzone.com/escape-room#rooms", "availability": "https://schema.org/InStock"}
+        },
+        {
+          "@type": "Product",
+          "name": "Mobster Hideout",
+          "description": "Search the hideout and escape before the mob boss returns! Hard difficulty • 30 minutes.",
+          "image": "https://flyerthrillzone.com/wp-content/uploads/2023/02/escape-room5-1920x1080-1-800x450.jpg",
+          "brand": {"@type": "Brand", "name": "The Flyer Thrill Zone"},
+          "additionalProperty": [
+            {"@type": "PropertyValue", "name": "Duration", "value": "30 minutes"},
+            {"@type": "PropertyValue", "name": "Difficulty", "value": "Hard"}
+          ],
+          "offers": {"@type": "Offer", "url": "https://flyerthrillzone.com/escape-room#rooms", "availability": "https://schema.org/InStock"}
+        }
+      ]
+    }
+  }
+  </script>
+
+  <!-- SEO: Breadcrumbs (JSON-LD) -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://flyerthrillzone.com/"},
+    {"@type":"ListItem","position":2,"name":"Escape Rooms","item":"https://flyerthrillzone.com/escape-room"}
+  ]}
+  </script>
+</head>
+
+<body class="text-white font-sans">
+
+  <!-- HERO SECTION -->
+  <header class="relative h-screen bg-cover bg-center" style="background-image: url('https://flyerthrillzone.com/wp-content/uploads/2023/02/escape-room6-1920x1080-1-800x450.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center">
+      <div class="text-center px-4" data-aos="fade-up">
+        <h1 class="text-5xl font-bold mb-4">Escape Rooms at Pier 39</h1>
+        <p class="text-xl mb-6">San Francisco’s Most Immersive Puzzle Adventure</p>
+        <a href="#rooms" class="btn-brand py-3 px-6 rounded-md text-lg font-bold shadow-lg transition">Book Now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT SECTION -->
+  <section class="py-16 px-4 section-mid" data-aos="fade-up">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">About The Flyer Thrill Zone Escape Rooms</h2>
+      <p class="text-gray-300 text-lg">Part of The Flyer Thrill Zone at Pier 39, our escape rooms challenge your wits, teamwork, and courage. Perfect for friends, families, birthdays, or team outings!</p>
+    </div>
+  </section>
+
+  <!-- ROOMS SECTION -->
+  <section id="rooms" class="py-16 section-dark">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Choose Your Room</h2>
+      <div class="flex flex-col md:flex-row justify-center gap-8">
+
+        <!-- Room 1 -->
+        <div class="section-mid rounded-lg overflow-hidden shadow-lg card" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://flyerthrillzone.com/wp-content/uploads/2023/02/escape-room6-1920x1080-1-800x450.jpg" alt="Escape the Rock Room" class="w-full aspect-video object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-2">Escape the Rock</h3>
+            <p class="text-gray-400 mb-2">Medium Difficulty • 30 Minutes</p>
+            <p class="text-gray-300 mb-4">Break out of Alcatraz in this high-stakes escape experience!</p>
+            <div class="flex gap-4">
+              <a href="/alcatraz-escape-room" class="link-brand font-semibold">Learn More</a>
+              <a href="#" onclick="FH.open({ shortname: 'theflyerthrillzone', item: 485631 }); return false;" class="link-brand font-semibold">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Room 2 -->
+        <div class="section-mid rounded-lg overflow-hidden shadow-lg card" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://flyerthrillzone.com/wp-content/uploads/2023/02/escape-room5-1920x1080-1-800x450.jpg" alt="Mobster Hideout Room" class="w-full aspect-video object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-2">Mobster Hideout</h3>
+            <p class="text-gray-400 mb-2">Hard Difficulty • 30 Minutes</p>
+            <p class="text-gray-300 mb-4">Search the hideout and escape before the mob boss returns!</p>
+            <div class="flex gap-4">
+              <a href="/mobster-hideout" class="link-brand font-semibold">Learn More</a>
+              <a href="#" onclick="FH.open({ shortname: 'theflyerthrillzone', item: 485631 }); return false;" class="link-brand font-semibold">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="py-16 section-mid text-center" data-aos="fade-up">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-10">Why Choose Us?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Immersive Themes</h3>
+          <p class="text-gray-300">Detailed sets and storylines bring the adventure to life.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Fun for Everyone</h3>
+          <p class="text-gray-300">Great for families, friends, and coworkers of all ages.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Prime Location</h3>
+          <p class="text-gray-300">Located right on San Francisco’s iconic Pier 39.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP & LOCATION -->
+  <section class="py-16 section-dark" data-aos="fade-up">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Visit Us at Pier 39</h2>
+      <p class="text-gray-300 mb-6">Beach Street & The Embarcadero, San Francisco, CA 94133</p>
+      <iframe class="w-full h-64 rounded" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.297014587375!2d-122.41001868468122!3d37.80867397975165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580f9f8c1f0a7%3A0xe1b89956f3a72782!2sPier%2039!5e0!3m2!1sen!2sus!4v1627770157290!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- CONTACT INFO -->
+  <section class="py-10 section-mid text-center text-gray-300" data-aos="fade-up">
+    <h2 class="text-2xl font-bold mb-4">Contact Us</h2>
+    <p class="mb-1">Phone: <a href="tel:+14155551234" class="link-brand">(415) 555-1234</a></p>
+    <p class="mb-1">Hours: 11am – 8pm Daily</p>
+    <p>
+      <a href="https://www.instagram.com/flyerthrillzone/" target="_blank" class="link-brand">Instagram</a> |
+      <a href="https://www.facebook.com/flyerthrillzone/" target="_blank" class="link-brand">Facebook</a>
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="section-dark py-6 text-center text-gray-500 text-sm">
+    <p>&copy; 2025 Escape Rooms at Pier 39 | <a href="/privacy-policy" class="link-brand">Privacy Policy</a> | <a href="/terms-of-use" class="link-brand">Terms of Use</a></p>
+  </footer>
+
+  <!-- AOS SCRIPT -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ once: true, duration: 1000 });</script>
+
+</body>
+</html>
